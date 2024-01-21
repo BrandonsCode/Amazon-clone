@@ -1,5 +1,3 @@
-// ignore_for_file: use_build_context_synchronously
-
 import 'dart:convert';
 import 'dart:io';
 import 'package:amazon_clone_tutorial/constants/error_handling.dart';

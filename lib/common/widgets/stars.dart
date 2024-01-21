@@ -5,9 +5,9 @@ import 'package:flutter_rating_bar/flutter_rating_bar.dart';
 class Stars extends StatelessWidget {
   final double rating;
   const Stars({
-    super.key,
+    Key? key,
     required this.rating,
-  });
+  }) : super(key: key);
 
   @override
   Widget build(BuildContext context) {
@@ -16,8 +16,10 @@ class Stars extends StatelessWidget {
       itemCount: 5,
       rating: rating,
       itemSize: 15,
-      itemBuilder: (context, _) =>
-          const Icon(Icons.star, color: GlobalVariables.secondaryColor),
+      itemBuilder: (context, _) => const Icon(
+        Icons.star,
+        color: GlobalVariables.secondaryColor,
+      ),
     );
   }
 }

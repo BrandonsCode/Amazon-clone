@@ -3,7 +3,7 @@ import 'package:amazon_clone_tutorial/features/account/screens/account_screen.da
 import 'package:amazon_clone_tutorial/features/cart/screens/cart_screen.dart';
 import 'package:amazon_clone_tutorial/features/home/screens/home_screen.dart';
 import 'package:amazon_clone_tutorial/providers/user_provider.dart';
-import 'package:badges/badges.dart';
+// import 'package:badges/badges.dart' as badges;
 import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
 
@@ -100,14 +100,14 @@ class _BottomBarState extends State<BottomBar> {
                   ),
                 ),
               ),
-              child: Badge(
-                elevation: 0,
-                badgeContent: Text(userCartLen.toString()),
-                badgeColor: Colors.white,
-                child: const Icon(
-                  Icons.shopping_cart_outlined,
-                ),
-              ),
+              // child: Badge(
+              //   elevation: 0,
+              //   badgeContent: Text(userCartLen.toString()),
+              //   badgeColor: Colors.white,
+              //   child: const Icon(
+              //     Icons.shopping_cart_outlined,
+              //   ),
+              // ),
             ),
             label: '',
           ),

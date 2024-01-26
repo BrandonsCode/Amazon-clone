@@ -17,9 +17,8 @@ class CustomButton extends StatelessWidget {
       child: Text(
         text,
         style: TextStyle(
-          color: color == null
-              ? sColor.fromARGB(255, 102, 101, 101)
-              : Colors.black,
+          color:
+              color == null ? Color.fromARGB(255, 102, 101, 101) : Colors.black,
         ),
       ),
       onPressed: onTap,

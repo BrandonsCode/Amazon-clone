@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 
-String uri = 'http://thrillarts-market.heroku.com';
+String uri = 'https://thrillarts-market-84d02d361449.herokuapp.com/';
 
 class GlobalVariables {
   // COLORS

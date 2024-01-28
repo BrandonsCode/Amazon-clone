@@ -71,7 +71,7 @@ class _AuthScreenState extends State<AuthScreen> {
               ListTile(
                 tileColor: _auth == Auth.signup
                     ? GlobalVariables.backgroundColor
-                    : GlobalVariables.greyBackgroundCOlor,
+                    : const Color.fromARGB(255, 238, 238, 235),
                 title: const Text(
                   'Create Account',
                   style: TextStyle(
@@ -127,7 +127,7 @@ class _AuthScreenState extends State<AuthScreen> {
               ListTile(
                 tileColor: _auth == Auth.signin
                     ? GlobalVariables.backgroundColor
-                    : GlobalVariables.greyBackgroundCOlor,
+                    : const Color.fromARGB(255, 237, 238, 235),
                 title: const Text(
                   'Sign-In.',
                   style: TextStyle(
@@ -135,7 +135,7 @@ class _AuthScreenState extends State<AuthScreen> {
                   ),
                 ),
                 leading: Radio(
-                  activeColor: GlobalVariables.secondaryColor,
+                  activeColor: const Color.fromRGBO(255, 153, 0, 1),
                   value: Auth.signin,
                   groupValue: _auth,
                   onChanged: (Auth? val) {

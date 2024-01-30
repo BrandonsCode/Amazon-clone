@@ -1,8 +1,12 @@
+import 'package:amazon_clone_tutorial/common/widgets/dialogues.dart';
 import 'package:amazon_clone_tutorial/constants/global_variables.dart';
 import 'package:amazon_clone_tutorial/features/admin/screens/analtyics_screen.dart';
 import 'package:amazon_clone_tutorial/features/admin/screens/orders_screen.dart';
 import 'package:amazon_clone_tutorial/features/admin/screens/posts_screen.dart';
 import 'package:flutter/material.dart';
+
+import '../../account/services/account_services.dart';
+import '../../account/widgets/account_button.dart';
 
 class AdminScreen extends StatefulWidget {
   const AdminScreen({Key? key}) : super(key: key);
@@ -51,11 +55,23 @@ class _AdminScreenState extends State<AdminScreen> {
                   color: Colors.black,
                 ),
               ),
-              const Text(
-                'Admin',
-                style: TextStyle(
-                  color: Colors.black,
-                  fontWeight: FontWeight.bold,
+              // AccountButton(
+              //   text: 'Log Out',
+              //   onTap: () => AccountServices().logOut(context),
+              // ),
+              GestureDetector(
+                onTap: () {
+                  actionDialogue(context, onAction: () async {
+                    Navigator.of(context).pop();
+                    await AccountServices().logOut(context);
+                  }, title: "Log out");
+                },
+                child: const Text(
+                  'Admin',
+                  style: TextStyle(
+                    color: Colors.black,
+                    fontWeight: FontWeight.bold,
+                  ),
                 ),
               )
             ],

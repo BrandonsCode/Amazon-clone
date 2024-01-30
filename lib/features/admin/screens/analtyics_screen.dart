@@ -43,17 +43,28 @@ class _AnalyticsScreenState extends State<AnalyticsScreen> {
                   fontWeight: FontWeight.bold,
                 ),
               ),
-              // SizedBox(
-              //   height: 250,
-              //   child: CategoryProductsChart(seriesList: [
-              //     charts.Series(
-              //       id: 'Sales',
-              //       data: earnings!,
-              //       domainFn: (Sales sales, _) => sales.label,
-              //       measureFn: (Sales sales, _) => sales.earning,
-              //     ),
-              //   ]),
-              // )
+              Padding(
+                padding: EdgeInsets.only(
+                    top: MediaQuery.of(context).size.height * 0.1),
+                child: SizedBox(
+                  height: 250,
+                  child: CategoryProductsChart(
+                    salesData: [...earnings ?? []],
+                    //DUMMY DATA BELOW
+
+                    // salesData: [
+                    //   Sales('Test 1', 10),
+                    //   Sales('Test 2', 80),
+                    //   Sales('Test 4', 90),
+                    //   Sales('Test 5', 100),
+                    //   Sales('Test 6', 120),
+                    //   Sales('Test 6', 120),
+                    //   Sales('Test 6', 120),
+                    //   Sales('Test 6', 150),
+                    // ],
+                  ),
+                ),
+              ),
             ],
           );
   }

@@ -44,7 +44,7 @@ class AccountServices {
     return orderList;
   }
 
-  void logOut(BuildContext context) async {
+  Future<void> logOut(BuildContext context) async {
     try {
       SharedPreferences sharedPreferences =
           await SharedPreferences.getInstance();

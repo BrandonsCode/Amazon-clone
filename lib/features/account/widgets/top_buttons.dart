@@ -1,5 +1,6 @@
 import 'package:amazon_clone_tutorial/features/account/services/account_services.dart';
 import 'package:amazon_clone_tutorial/features/account/widgets/account_button.dart';
+import 'package:amazon_clone_tutorial/common/widgets/dialogues.dart';
 import 'package:flutter/material.dart';
 
 class TopButtons extends StatelessWidget {
@@ -16,8 +17,13 @@ class TopButtons extends StatelessWidget {
               onTap: () {},
             ),
             AccountButton(
-              text: 'Turn Seller',
-              onTap: () {},
+              text: 'Delete Account',
+              onTap: () {
+                actionDialogue(context, onAction: () async {
+                  Navigator.of(context).pop();
+                  await AccountServices().deleteUser(currentUser);
+                }, title: "Delete Account");
+              },
             ),
           ],
         ),

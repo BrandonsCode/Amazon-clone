@@ -84,7 +84,6 @@ class _PostsScreenState extends State<PostsScreen> {
               },
             ),
             floatingActionButton: FloatingActionButton(
-              // ignore: sort_child_properties_last
               child: const Icon(Icons.add),
               onPressed: navigateToAddProduct,
               tooltip: 'Add a Product',

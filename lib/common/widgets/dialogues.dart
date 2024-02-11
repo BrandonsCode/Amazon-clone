@@ -8,6 +8,8 @@ void actionDialogue(
   String? subTitle,
   Icon? icon,
   bool? barrierDismissible,
+  Widget? body,
+  String? actionButtonText,
 }) async {
   showDialog(
     barrierDismissible: barrierDismissible ?? true,
@@ -24,16 +26,13 @@ void actionDialogue(
         ],
       ),
       icon: icon,
-      content: subTitle != null
-          ? Column(
-              mainAxisSize: MainAxisSize.min,
-              children: [
-                Text(
-                  subTitle,
-                ),
-              ],
-            )
-          : null,
+      content: Column(
+        mainAxisSize: MainAxisSize.min,
+        children: [
+          if (subTitle != null) Text(subTitle),
+          if (body != null) body,
+        ],
+      ),
       actions: [
         TextButton(
           onPressed: () {
@@ -50,15 +49,15 @@ void actionDialogue(
         GestureDetector(
           onTap: onAction,
           child: Container(
-            width: 100,
+            width: 120,
             height: 50,
             decoration: const BoxDecoration(
               color: Colors.red,
             ),
-            child: const Center(
+            child: Center(
               child: Text(
-                "Log out",
-                style: TextStyle(color: Colors.white),
+                actionButtonText ?? "Log out",
+                style: const TextStyle(color: Colors.white),
               ),
             ),
           ),

@@ -58,4 +58,34 @@ class AccountServices {
       showSnackBar(context, e.toString());
     }
   }
+
+  Future<void> deleteAccount(BuildContext context) async {
+    final userProvider = Provider.of<UserProvider>(context, listen: false);
+    debugPrint('token: ${userProvider.user.token}');
+    try {
+      http.Response res =
+          await http.post(Uri.parse('$uri/api/delete-account'), headers: {
+        'Content-Type': 'application/json; charset=UTF-8',
+        'x-auth-token': userProvider.user.token,
+      });
+
+      httpErrorHandle(
+        response: res,
+        context: context,
+        onSuccess: () async {
+          SharedPreferences sharedPreferences =
+              await SharedPreferences.getInstance();
+          await sharedPreferences.setString('x-auth-token', '');
+          Navigator.pushNamedAndRemoveUntil(
+            context,
+            AuthScreen.routeName,
+            (route) => false,
+          );
+          showSnackBar(context, 'Account Deleted');
+        },
+      );
+    } catch (e) {
+      showSnackBar(context, e.toString());
+    }
+  }
 }

@@ -118,4 +118,15 @@ userRouter.get("/api/orders/me", auth, async (req, res) => {
   }
 });
 
+// Delete User Account
+authRouter.post("/api/delete-account", auth, async (req, res) => {
+  try {
+    const user = await User.findByIdAndDelete(req.user);
+    if (!user) return res.status(404).json({message: "User not found"});
+    return res.status(200).json({message: "User has been deleted", user});
+  } catch (e) {
+    res.status(500).json({ error: e.message });
+  }
+});
+
 module.exports = userRouter;

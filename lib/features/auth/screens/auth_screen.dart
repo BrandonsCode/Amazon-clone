@@ -63,7 +63,7 @@ class _AuthScreenState extends State<AuthScreen> {
           child:
               Column(crossAxisAlignment: CrossAxisAlignment.start, children: [
             const Text(
-              'Welcome',
+              'ThrillArts Market',
               style: TextStyle(
                 fontSize: 22,
                 fontWeight: FontWeight.w500,
